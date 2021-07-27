@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { registroEmailPasswordNombre } from '../actions/action';
 import { useForm } from '../hooks/useForm';
 
@@ -19,7 +20,7 @@ export const RegisterScreen = () => {
 
     const handleRegistro = (e) => {
         e.preventDefault();
-        console.log(nombre, pass1, email);
+        console.log("registro: ", formValues);
         dispatch(registroEmailPasswordNombre(email, pass1, nombre))
     }
 
@@ -70,11 +71,16 @@ export const RegisterScreen = () => {
                     />
                 </Form.Group>
 
-
-                <Button variant="primary" type="submit">
+                <Button variant="primary w-100" type="submit">
                     Registrarse
                 </Button>
 
+                <Link
+                    to="/auth/login"
+                    className="link"
+                >
+                    Already registered?
+                </Link>
 
             </Form>
 

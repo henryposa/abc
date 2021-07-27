@@ -20,7 +20,7 @@ export const LoginScreen = () => {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        dispatch(login(email,password))
+        dispatch(login(email, password))
         console.log("email y password", email, password)
     }
 
@@ -59,7 +59,7 @@ export const LoginScreen = () => {
                 <Container className="auth__social-networks">
                     <Container
                         className="google-btn"
-                    onClick={handleLoginGoogle}
+                        onClick={handleLoginGoogle}
                     >
                         <Container className="google-icon-wrapper">
                             <img
@@ -70,6 +70,13 @@ export const LoginScreen = () => {
                         </Container>
                     </Container>
                 </Container>
+
+                <Link
+                    to="/auth/register"
+                    className="link"
+                >
+                    not registered?
+                </Link>
             </Form>
         </>
     )
